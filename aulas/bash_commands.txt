@@ -1,0 +1,7 @@
+mkdir -> Create a new folder 
+touch  > Creare a new file ex.: touch test.py
+rmdir - > Delete a folder 
+rm -> Delete a file 
+mv -> Move a folder ex. mv my_project c:/my_project
+ls == dir
+cd .. -> return the folder up
