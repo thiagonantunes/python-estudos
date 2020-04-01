@@ -14,89 +14,72 @@ for letra in str:
         nova_frase += letra
 print(nova_frase)
 
-#lista = ['A', 'B', 'C', 'D', 'E', 10.5] 
-#lista[5] = 'Qualquer outra coisa'  # alterar conteúdo do item 5
-#print (lista[5])  #Exibir item 5 da lista
-#print(lista[0:3])  #fatiamento
+lista = ['A', 'B', 'C', 'D', 'E', 10.5] 
 
-#lista1 = [1,2,3]
-#lista2 = [3,4,5]
-#lista3 = lista1 + lista2  #concatenar
-#print(lista3)
+# alterar conteúdo do item 5
+lista[5] = 'Qualquer outra coisa'
 
-#lista1.insert(0, 'banana')  #insere item na posição informada
-#lista1.pop()  #exclui o último item da lista
-#lista1.extend(lista2)
-#print(lista1)
-#print(lista2)
-#del(lista1[0])  #exclui o item escolhido
-#print(lista1)
+lista1 = [1,2,3]
+lista2 = [3,4,5]
+lista3 = lista1 + lista2  #concatenar
+print(lista3)
+lista1.insert(0, 'banana')  #insere item na posição informada
+lista1.pop()  #exclui o último item da lista
+lista1.extend(lista2)
+print(lista1)
+print(lista2)
+del(lista1[0])  #exclui o item escolhido
+print(lista1)
 
-#lista = list(range(0,11))  #comando lista -> cria uma lista dos valores de range
-#print(lista)
+lista = list(range(0,11))  #comando lista -> cria uma lista dos valores de range
+print(lista)
 
-#item = ['String', True, 10, -10.5]
-
-#for elem in item:
-#  print(f'O tipo de {elem} é {type(elem)}')
-
-# secreta = 'perfume'
-# digitadas = []
-# cont = 3
-# while True:
-#   if cont < 1:
-#     break
-#   letra = input('Type a letter: ')
-#   if len(letra) > 1:
-#     print('Type only 1 letter.')
-#     continue
-#   if letra in secreta or letra not in digitadas:
-#     digitadas.append(letra)
-#   if letra in secreta:
-#     print(f'A letra "{letra}" tem na palavra secreta')
-#   else:
-#     print(f'A letra "{letra}" não tem na palavra secreta')
-#     digitadas.pop()
-#     cont -= 1
-#     while cont > 0: 
-#       print(f'Você tem mais {cont} tentativas')
-#       break
-#     else:
-#       print(f'Você perdeu, acabaram suas tentativas, a palavra era {secreta.upper()}')
-#       break
-#   secreto_temp = ''
-#   for letra_secreta in secreta:
-#     if letra_secreta in digitadas:
-#       secreto_temp += letra_secreta
-#     else:
-#       secreto_temp += '*'
-#   if secreto_temp == secreta:
-#     print(f'PARABÉNS, você acertou, a palvra secreta é {secreta.upper()}')
-#     break
-#   else:
-#     print(f'A palavra secreta está assim: {secreto_temp}')
-
+item = ['String', True, 10, -10.5]
+for elem in item:
+ print(f'O tipo de {elem} é {type(elem)}')
 
 lista = ['Luiz Oátvio', 'Thiago', 'Maria']
-#comeca_com_j = False
-#for var in lista:
-#  if var.lower().startswith('t'):
-#    comeca_com_j = True
-#if comeca_com_j:
-#  print('Tem pelo menos uma palavra que começa com T')
-#else:
-#  print('Não tem nenhuma palavra que começa com T')
-
-# O programa acima pode ser escrito conforma abaixo:
-
 for var in lista:
     if var.lower().startswith('t'):
-        print('começa com T')
+        print(f'{var} começa com T')
         break  # colocar break para sair do laço, senão vai imprimir o else
     else:
         print('Nenhum nome começa com T')
 
 
-#for var in lista:
-#  if var.lower().startswith('t'):
-#    print(var)
+#Exercício utilizando fatiamento
+# secreta = 'perfume'
+# digitadas = []
+# cont = 3
+# while True:
+#     if cont < 1:
+#         break
+#     letra = input('Type a letter: ')
+#     if len(letra) > 1:
+#         print('Type only 1 letter.')
+#         continue
+#     if letra in secreta or letra not in digitadas:
+#         digitadas.append(letra)
+#     if letra in secreta:
+#         print(f'A letra "{letra}" tem na palavra secreta')
+#     else:
+#         print(f'A letra "{letra}" não tem na palavra secreta')
+#         digitadas.pop()
+#         cont -= 1
+#     while cont > 0: 
+#         print(f'Você tem mais {cont} tentativas')
+#         break
+#     else:
+#         print(f'Você perdeu, acabaram suas tentativas, a palavra era {secreta.upper()}')
+#         break
+#     secreto_temp = ''
+#     for letra_secreta in secreta:
+#         if letra_secreta in digitadas:
+#             secreto_temp += letra_secreta
+#         else:
+#             secreto_temp += '*'
+#     if secreto_temp == secreta:
+#         print(f'PARABÉNS, você acertou, a palvra secreta é {secreta.upper()}')
+#         break
+#     else:
+#         print(f'A palavra secreta está assim: {secreto_temp}')
