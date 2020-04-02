@@ -73,3 +73,10 @@ for valor in contador:
     print(round(valor, 2))  # função round arredonda valor
     if valor >= 10:
         break
+
+#ACCUMULATE
+from itertools import accumulate
+
+#Soma os valores na sequência e retorna as somas.
+lista = ([1,2,3,4,5,6,7,8,9,10])
+total = accumulate(lista)

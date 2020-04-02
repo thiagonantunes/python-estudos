@@ -2,8 +2,7 @@
 
 import os
 
-os.chdir('/Users/Thiago/Music/nova pasta')
-
+os.chdir('/Users/Thiago/Music')
 
 for f in os.listdir():
     new_name = (f.title())
