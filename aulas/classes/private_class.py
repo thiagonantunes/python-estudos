@@ -1,3 +1,4 @@
+# ENCAPSULAMENTO
 # PUBLIC, _PROTECTED, __PRIVATE
 """
 utiliza _ para deixar o atributo protegido (pode ser alterado)

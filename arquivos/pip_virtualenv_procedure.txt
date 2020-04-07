@@ -1,0 +1,16 @@
+virtualenv venv
+
+activate -> . venv/Scripts/Activate
+
+desactivate -> deactivate
+
+command which -> binary path of the python  ex. which python
+
+pip freeze -> listagem pacotes instalados
+pip install <nome-do-pacote> --upgrade -> atualização do pacote
+pip uninstall -> remoção do pacote
+pip search <nome> -> procurar módulo
+pip list --outdated -> lista de módulos desatualizados
+pip show <nome-do-pacote> -> exibir informações do módulo
+pip freeze > requirements.txt -> gerar lista de módulos
+pip install -r requirements.txt -> instalar o que estiver na lista

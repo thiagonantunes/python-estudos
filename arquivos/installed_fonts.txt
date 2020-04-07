@@ -1,0 +1,10 @@
+https://github.com/ProgrammingFonts/ProgrammingFonts
+
+Fira Code
+Source Code Pro
+Hack
+Input mono
+Ubuntu mono
+Ubuntu
+Monaco
+Monoid

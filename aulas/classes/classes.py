@@ -6,8 +6,9 @@ class CarrinhoDeCompras:
         self.produtos.append(produto)
 
     def lista_produtos (self):
+        print('Itens no carrinho')
         for produto in self.produtos:
-        print(produto.nome, produto.valor)
+            print(f'--> {produto.nome:<10}R$ {produto.valor:>6.2f}')
     
     def soma_total(self):
         total = sum(produto.valor for produto in self.produtos)
@@ -19,7 +20,6 @@ class Produto:
         self.valor = valor
 
 carrinho = CarrinhoDeCompras()
-
 p1 = Produto('Camiseta', 50)
 p2 = Produto('Calça', 120)
 p3 = Produto('tenis', 340)
@@ -27,7 +27,7 @@ carrinho.inserir_produto(p1)
 carrinho.inserir_produto(p2)
 carrinho.inserir_produto(p3)
 carrinho.lista_produtos()
-print(f'R$ {carrinho.soma_total():.2f}')
+print(f'{carrinho.soma_total():>23.2f}')
 
 
 # Outro exemplo
@@ -35,55 +35,74 @@ print(f'R$ {carrinho.soma_total():.2f}')
 # Usando o arquivo classes
 from datetime import datetime
 
-class Pessoa():
-    ano_atual = int(datetime.strftime(datetime.now(), '%Y'))
-    def __init__(self, nome, idade, comendo=False, falando=False):
-        self.nome = nome
-        self.idade = idade
-        self.comendo = comendo
-        self.falando = falando
+class Person:
 
-    def falar(self, assunto):
-        if self.comendo:
-            print(f'{self.nome} não pode falar comendo')
-            return
-        if self.falando:
-            print(f'{self.nome} já esta falando')
-            return
-        
-        print(f'{self.nome} está falando sobre {assunto}')
-        self.falando = True
+    ano = 2020
+    # actual_year = datetime.strftime(datetime.now(), '%Y')
+    actual_year = int(datetime.today().year)
 
-    def parar_falar(self):
-        if not self.falando:
-            print(f'{self.nome} não está falando')
-            return
-        print (f'{self.nome} parou de falar')
-        self.falando = False
+    def __init__(self, name, age, speaking=False, eating=False):
+        self.name = name
+        self.age = age
+        self.speaking = speaking
+        self.eating = eating
 
-    def comer(self, alimento):
-        if self.comendo:
-            print(f'{self.nome} já está comendo')
-            return
-        if self.falando:
-            print(f'{self.nome} não pode comer falando')
+    def speak(self, subject):
+        if self.eating:
+            print(f'{self.name} cant speak while eating')
             return
 
-        print(f'{self.nome} está comendo {alimento}')
-        self.comendo = True
-
-    def parar_comer(self):
-        if not self.comendo:
-            print (f'{self.nome} não está comendo')
+        if not self.speaking:
+            print(f'{self.name} is speaking about {subject}')
+            self.speaking = True
             return
-        print(f'{self.nome} parou de comer. ')
-        self.comendo = False
+        print(f'{self.name} is already speaking')
 
-    def get_ano_nascimento(self):
-        return self.ano_atual - self.idade
+    def eat(self, food):
+        if self.speaking:
+            print(f'{self.name} cant eat while speaking')
+            return
 
-p1 = Pessoa('Thiago', 38)
-p2 = Pessoa('João', 45)
-p1.falar('POO')
-p2.falar('filmes')
-print(p2.get_ano_nascimento())
+        if self.eating:
+            print(f'{self.name} is already eating')
+            return
+        print(f'{self.name} is eating {food}')
+        self.eating = True
+        return
+
+    def stop_eat(self):
+        if not self.eating:
+            print(f'{self.name} is not eating')
+            return
+        print (f'{self.name} stop eating')
+        self.eating = False
+        return
+
+        if self.speaking:
+            print(f'{self.name} cant eat while speaking')
+            return
+
+    def stop_speak(self):
+        if not self.speaking:
+            print(f'{self.name} is not speaking')
+            return
+        print (f'{self.name} stop speaking')
+        self.speaking = False
+        return
+
+        if self.eating:
+            print(f'{self.name} cant speak while eating')
+            return
+
+    @property
+    def birth_year(self):
+        return Person.actual_year - self.age
+
+    @classmethod
+    def test(cls, year):
+        return cls.ano - year
+
+p1 = Person('John', 26)
+print(p1.birth_year)
+print(Person.test(1982))
+    

@@ -22,3 +22,7 @@ produtos = [
 
 soma_valores = round(reduce(lambda ac, v: v['preço'] + ac, produtos, 0))
 print(soma_valores / len(produtos))  #média
+
+# identificar maior valor
+lista = [12, 43, 3224, 123]
+maior = reduce(lambda x,y: x if(x > y) else y, lista)

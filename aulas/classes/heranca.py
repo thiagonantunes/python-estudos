@@ -15,7 +15,7 @@ class Aluno(Pessoa):
     def estudar(self):
         print(f'{self.nameclass} estudando')
 
-c1 = Cliente('Ernani', 43)
-a1 = Aluno('Thiago', 37)
+c1 = Cliente('John', 43)
+a1 = Aluno('Smith', 37)
 
 c1.comprar()

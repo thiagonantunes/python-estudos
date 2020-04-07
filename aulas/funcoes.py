@@ -10,8 +10,6 @@ clientes2 = clients(['Fábio', 'Josi', 'Sofia', 'Giulia'])
 print(clientes1)
 print(clientes2)
 
-
-
 def show_op(todo_list):
     print()
     print('Tarefas: ')
