@@ -1,36 +1,72 @@
-class CarrinhoDeCompras:
-    def __init__(self):
-        self.produtos = []
+import datetime
 
-    def inserir_produto (self, produto):
-        self.produtos.append(produto)
-
-    def lista_produtos (self):
-        print('Itens no carrinho')
-        for produto in self.produtos:
-            print(f'--> {produto.nome:<10}R$ {produto.valor:>6.2f}')
-    
-    def soma_total(self):
-        total = sum(produto.valor for produto in self.produtos)
-        return total
-
-class Produto:
-    def __init__ (self, nome, valor):
+class Cliente:
+    def __init__(self, nome, sobrenome, cpf):
         self.nome = nome
-        self.valor = valor
+        self.sobrenome = sobrenome
+        self.cpf = cpf
 
-carrinho = CarrinhoDeCompras()
-p1 = Produto('Camiseta', 50)
-p2 = Produto('Calça', 120)
-p3 = Produto('tenis', 340)
-carrinho.inserir_produto(p1)
-carrinho.inserir_produto(p2)
-carrinho.inserir_produto(p3)
-carrinho.lista_produtos()
-print(f'{carrinho.soma_total():>23.2f}')
+class Conta:
+    _total_contas = 0
+    # __slots__ = ['_num', '_titular', '_saldo', '_historico']
+    def __init__(self, num, titular, saldo, limite=1000):
+        self.num = num
+        self.titular = titular
+        self.saldo = saldo
+        self.limite = limite
+        self.historico = Historico()
+        Conta._total_contas += 1
 
+    @classmethod
+    def get_total_contas(cls):
+        return Conta._total_contas
 
-# Outro exemplo
+    def depositar(self, valor):
+        self.saldo += valor
+        self.historico.transacoes.append(f'Depósito de: {valor}')
+
+    def sacar(self, valor):
+        if (self.saldo + self.limite) < valor:
+            print('Saldo insuficiente')
+            return
+        self.saldo -= valor
+        self.historico.transacoes.append(f'Saque de: {valor}')
+
+    @property
+    def extrato(self):
+        return f"conta: {self.num}\nSaldo: {self.saldo}"
+        self.historico.transacoes.append(f'Extrato - saldo de {self.saldo}')
+
+    def transfere(self, destino, valor):
+        if self.saldo < valor:
+            print('Saldo insuficiente')
+            return
+        self.saldo -= valor
+        destino.saldo += valor
+        self.historico.transacoes.append(f'Transferiu {valor} para {destino.num}')
+
+class Historico:
+    def __init__(self):
+        self.data_abertura = datetime.datetime.today()
+        self.transacoes = []
+
+    def imprime(self):
+        print(f'Data abertura: {self.data_abertura}')
+        print(f'Transações: ')
+        for t in self.transacoes:
+            print(f'--> {t}')
+
+cli1 = Cliente('Thiago', 'Nonato', '298425948-31')
+cli2 = Cliente('Simone', 'Antunes', '299243848-06')
+cli3 = Cliente('Otto', 'Antunes', '123456789-06')
+conta1 = Conta('123-4', cli1, 100, 500)
+conta2 = Conta('456-9', cli2, 200)
+conta3 = Conta('789-3', cli3, 200)
+conta1.sacar(30)
+conta1.transfere(conta2, 10)
+conta1.depositar(90)
+conta1.historico.imprime()
+
 
 # Usando o arquivo classes
 from datetime import datetime

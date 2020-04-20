@@ -7,7 +7,7 @@ class Pessoa:
     def falar(self)  :
         print(f'{self.nameclass} falando')
 
-class Cliente(Pessoa):
+class Cliente(Pessoa):  # <- Herança aqui
     def comprar(self)  :
         print(f'{self.nameclass} comprando')
 

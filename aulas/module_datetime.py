@@ -1,6 +1,10 @@
 # https://docs.python.org/3/library/datetime.html?highlight=strftime#datetime.datetime.strftime
+
+# https://docs.python.org/2/library/datetime.html
 import datetime
 import pytz
+from locale import setlocale, LC_ALL
+from calendar import mdays
 
 my_date = datetime.datetime.today()
 sentence = f'{my_date:%d %B, %Y }'
@@ -32,3 +36,16 @@ print(dt)
 # print(dt_today)
 # print(dt_now)
 # print(dt_utcnow)
+
+data = datetime.datetime.today()  #(2020, 7, 14, 10, 53, 20)
+print(data.strftime('%d/%m/%Y'))
+hoje = datetime.datetime.strptime('20/04/2020', '%d/%m/%Y')
+hoje = hoje + datetime.timedelta(days=15)
+
+setlocale(LC_ALL, 'pt_BR.utf-8') # s deixar em branco pega o local do pc
+dt = datetime.datetime.now()
+
+formatacao = dt.strftime('%A, %d de %B de %Y')
+print(formatacao)
+mes_atual = int(dt.strftime('%m'))
+print(mdays[mes_atual])

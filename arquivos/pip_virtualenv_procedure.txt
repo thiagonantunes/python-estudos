@@ -7,10 +7,10 @@ desactivate -> deactivate
 command which -> binary path of the python  ex. which python
 
 pip freeze -> listagem pacotes instalados
-pip install <nome-do-pacote> --upgrade -> atualização do pacote
-pip uninstall -> remoção do pacote
-pip search <nome> -> procurar módulo
-pip list --outdated -> lista de módulos desatualizados
-pip show <nome-do-pacote> -> exibir informações do módulo
-pip freeze > requirements.txt -> gerar lista de módulos
+pip install <nome-do-pacote> --upgrade -> atualizaÃ§Ã£o do pacote
+pip uninstall -> remoÃ§Ã£o do pacote
+pip search <nome> -> procurar mÃ³dulo
+pip list --outdated -> lista de mÃ³dulos desatualizados
+pip show <nome-do-pacote> -> exibir informaÃ§Ãµes do mÃ³dulo
+pip freeze > requirements.txt -> gerar lista de mÃ³dulos
 pip install -r requirements.txt -> instalar o que estiver na lista
