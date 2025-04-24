@@ -1,2 +1,2 @@
 # Estudos
- Aprendendo Python
+ Arquivos com comandos Python para consultas.
